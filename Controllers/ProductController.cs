@@ -16,10 +16,11 @@ namespace employee.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(List<Products>), 200)]
         public IActionResult GetEmployees()
         {
-            var employees = _productRepository.GetAll();
-            return Ok(employees);
+            var products = _productRepository.GetAll();
+            return Ok(products);
         }
 
         [HttpPut("{pid}/status")]
