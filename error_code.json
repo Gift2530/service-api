@@ -1,0 +1,11 @@
+﻿{
+  "error_codes": [
+    {
+      "error_code": "C000",
+      "exception_name": "Undefined",
+      "description_en": "Undefined",
+      "description_th": "ไม่สามารถระบุเงื่อนไขผิดพลาดได้",
+      "exception_namespace": "Base"
+    }
+  ]
+}

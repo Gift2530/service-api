@@ -1,4 +1,6 @@
 using employee.Repository;
+using ProductData;
+using ProductData.Common;
 using ProductData.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +8,7 @@ var services = builder.Services;
 // Add services to the container.
 services.AddTransient<ProductRepository>(_ => new ProductRepository(builder.Configuration.GetConnectionString("DefaultConnection")));
 services.AddTransient<ShoppingCartRepository>(_ => new ShoppingCartRepository(builder.Configuration.GetConnectionString("DefaultConnection")));
+services.AddSingleton<IGlobalErrorInstance, GlobalErrorInstance>();
 
 #region CORS
 builder.Services.AddCors(options =>
@@ -28,6 +31,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseMiddleware<ExceptionHandler>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
