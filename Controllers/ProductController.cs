@@ -17,19 +17,9 @@ namespace employee.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(List<Products>), 200)]
-        public IActionResult GetEmployees()
+        public IActionResult GetProducts()
         {
-            try
-            {
-                throw new Exception("An error occurred");
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
             var products = _productRepository.GetAll();
-             
             return Ok(products);
         }
 
