@@ -396,6 +396,3 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-/SmartReport.Test/wwwroot/assets/temps/*.png
-/SmartReport.Test/fine-code-coverage/build-outputwwwroot/assets/temps/*.png
-SmartReport.Test/fine-code-coverage/build-outputwwwroot/assets/temps/*.jpeg
